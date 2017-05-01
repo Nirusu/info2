@@ -3,6 +3,6 @@ private:
     int integer;
 public:
     Simple_class(int input);
-    int get() {return integer;};
+    int get();
     void set(int input);
 };
