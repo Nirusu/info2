@@ -19,25 +19,27 @@ Linked_list* Linked_list::insert_at_index(unsigned int index, Linked_list *node)
     {
         return NULL;
     }
-    // special cases for index == 0 and index == 1 because otherwise we get in trouble with the for loop
+    // special case for index == 0
     if (index == 0) {
         start = node;
         start->nextNode = this;
     }
-    else if (index == 1) {
-        node->nextNode = nextNode;
-        nextNode = node;
-    }
     else {
         Linked_list* worker = this;
+        unsigned int nodeCounter = 0;
         // iterate through the nodes right before we point we should insert the new node
         for (int i=0; i<index; i++)
         {
             // check to avoid traversing to a non-existing node
-            if (worker->nextNode != nullptr)
+            if (worker->nextNode != nullptr) {
                 worker = worker->nextNode;
-            else
+                nodeCounter++;
+            }
+                //check if we try to insert behind the end of the list because we don't have a counter in Linked_list, so we don't know how many nodes we have in advance
+            else if (index > nodeCounter + 1)
+            {
                 return NULL;
+            }
         }
         // set the old "nextNode" into the node we want to insert to avoid loss of data
         node->nextNode = worker->nextNode;
