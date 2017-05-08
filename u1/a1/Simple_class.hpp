@@ -1,4 +1,4 @@
-class Simple_class{
+class Simple_class {
 private:
     int integer;
 public:

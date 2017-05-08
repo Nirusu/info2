@@ -1,5 +1,5 @@
 #include <string>
-class Linked_list{
+class Linked_list {
 private:
     std::string string;
     Linked_list* nextNode = nullptr;

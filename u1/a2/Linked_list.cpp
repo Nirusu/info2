@@ -15,29 +15,25 @@ Linked_list* Linked_list::next() {
 Linked_list* Linked_list::insert_at_index(unsigned int index, Linked_list *node) {
     Linked_list* start = this;
     // check if the node to insert isn't another list but rather a single note
-    if (node->nextNode != nullptr)
-    {
+    if (node->nextNode != nullptr) {
         return NULL;
     }
     // special case for index == 0
     if (index == 0) {
         start = node;
         start->nextNode = this;
-    }
-    else {
+    } else {
         Linked_list* worker = this;
         unsigned int nodeCounter = 0;
         // iterate through the nodes right before we point we should insert the new node
-        for (int i=0; i<index; i++)
-        {
+        for (int i=0; i<index; i++) {
             // check to avoid traversing to a non-existing node
             if (worker->nextNode != nullptr) {
                 worker = worker->nextNode;
                 nodeCounter++;
             }
-                //check if we try to insert behind the end of the list because we don't have a counter in Linked_list, so we don't know how many nodes we have in advance
-            else if (index > nodeCounter + 1)
-            {
+            // check if we try to insert behind the end of the list because we don't have a counter in Linked_list, so we don't know how many nodes we have in advance
+            else if (index > nodeCounter + 1) {
                 return NULL;
             }
         }
@@ -58,8 +54,7 @@ Linked_list* Linked_list::remove_at_index(unsigned int index) {
     if (index == 0) {
         start = start->nextNode;
         delete this;
-    }
-    else if (index == 1) {
+    } else if (index == 1) {
         if (this->nextNode != nullptr)
             toDelete = this->nextNode;
         else
@@ -68,11 +63,9 @@ Linked_list* Linked_list::remove_at_index(unsigned int index) {
         this->nextNode = toDelete->nextNode;
         // .. and free the memory
         delete toDelete;
-    }
-    else {
+    } else {
         // check to avoid traversing to a non-existing node
-        for (int i=0; i<index; i++)
-        {
+        for (int i=0; i<index; i++) {
             if (beforeToDelete->nextNode != nullptr)
                 beforeToDelete = beforeToDelete->nextNode;
             else
