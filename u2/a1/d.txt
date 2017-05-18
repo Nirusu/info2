@@ -1,0 +1,3 @@
+N^3
+
+N^3 ist der größte Faktor und hat daher auch die größte Auswirkung auf die Laufzeit.

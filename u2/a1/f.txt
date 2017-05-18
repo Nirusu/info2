@@ -1,0 +1,3 @@
+O(f)=4^N
+
+Die 2 lässt sich schon mit der 4 exponentieren, wodurch man sqrt(16^N) erhält. Zieht man anschließend die Wurzel von 16^N, erhält man 4^N.

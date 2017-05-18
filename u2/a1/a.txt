@@ -1,0 +1,3 @@
+O(f)=N
+
+Die Addition mit 1 ist bei großen Werten irrelevant.

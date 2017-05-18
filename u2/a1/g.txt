@@ -1,0 +1,3 @@
+O(f)=N^N
+
+N^N wächst bei N > 1 wesentlich schneller als 2^N.

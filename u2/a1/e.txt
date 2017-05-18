@@ -1,0 +1,3 @@
+O(f)=1
+
+Wenn man den Skalar 2 von ln(2N) weglässt, erhält man ln(N)/ln(N), was 1 ergibt und konstanter Wachstum bedeutet.
