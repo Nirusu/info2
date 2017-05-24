@@ -1,0 +1,6 @@
+O(n*log(n))
+
+Die äußere Schleife läuft, wie auch bei a) und b), log_2(n) mal durch. Die Basis des Logarithmus entfällt in der O-Notation, da sie nicht von (großer) Relevanz ist.
+Die innere Schleife läuft diesmal jedoch IMMER N mal durch und wächst daher linear.
+
+Daraus folgt: n * log(n) -> O(n*log(n))

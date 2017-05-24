@@ -1,0 +1,8 @@
+O(N)
+
+Gleiches Prinzip wie bei a), nur, dass man von 1 bis N hochmultipliziert statt von N bis 1 runterdividiert.
+
+Die äußere Schleife wächst log_2(N) logarithmisch.
+Die innere Schleife bildet die geometrische Reihe und verläuft N + N/2 + N/4. Die Laufzeit nimmt also ab (konvergiert gegen 0) und lässt sich vereinfacht als N darstellen.
+
+Daraus folgt: O(N)
