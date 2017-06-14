@@ -1,0 +1,14 @@
+Insertion Sort:
+	Vergleiche: O(N^2)
+		Im Worst Case müsste, aufgrund der inneren Schleife, jedes Element bis nach links zu den bereits sortierten Elementen verglichen werden. Man startet also bei (n-1) Vergleichen und muss pro Durchlauf jeweils einen Vergleich weniger rechnen:
+		(N-1) + (N-2) + ... + 1 = (N*(N-1))/2
+		Im Average Case (zufällige Verteilung) gehen wir jedoch davon aus, dass nur die Hälfte sortiert werden muss. In der Tilden-Notation würde dies (N*(N-1))/4 entsprechen, für die O-Notation macht dies allerdings keinen Unterschied.
+	Vertauschungen: O(N^2)
+		Für die Vertauschungen gelten die gleichen Regeln wie für die Vergleiche, da beim Durchlauf der inneren Schleife jeweils eine Vertauschung stattfindet.
+
+Selection Sort:
+	Vergleiche: O(N^2)
+		In jedem Durchlauf wird das verbleibende Array bis zum Ende durchlaufen. Dies macht zu Beginn (n-1) Vergleiche und baut dann ab. Mathematisch lässt sich dies so darstellen:
+		(N-1) + (N-2) + ... + 1 = ((N-1)*N)/2
+	Vertauschungen: O(N)
+		Da Selection Sort "gezielt" tauscht und das letzte Element nicht getauscht werden muss, stimmt die Anzahl der Vertauschungen mit der Anzahl der Elemente im Array minus 1 überein. Es gilt also: (n-1)

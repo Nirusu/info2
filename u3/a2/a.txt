@@ -1,0 +1,2 @@
+Ob man für kleine Eingaben Selection Sort oder Insertion Sort wählt, ist in der Regel egal, da der Performanceunterschied nicht wirklich erkennbar ist.
+Generell sollte man jedoch Insertion Sort bevorzugen, da es performanter ist, sofern Vertauschoperation auf der Zielplattform nicht langsam sind.

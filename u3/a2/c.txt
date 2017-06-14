@@ -1,0 +1,4 @@
+Selection Sort
+
+Bei Insertion Sort müssen, im Vergleich zu Selection Sort, zusätzlich zum Durchlaufen des Arrays noch viele Vertauschoperationen durchgeführt werden, um ein Element zu verschieben. 
+Selection Sort hingegen durchläuft das Array und tauscht die Elemente "gezielt" an die richtige Stelle.

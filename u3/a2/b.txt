@@ -1,0 +1,3 @@
+﻿Insertion Sort
+
+Wenn die Eingaben bereits nahezu sortiert sind, so muss die innere Schleife vom Insertion Sort nur selten ausgeführt werden, während hingegen bei Selection Sort die innere Schleife den verbleibenden Teil des Arrays durchläuft, um das Minimum zu suchen.
