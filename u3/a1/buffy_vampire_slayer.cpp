@@ -16,7 +16,7 @@ creature_counts count_creatures(int N, int creature_powers[])
 	int count_vampires = 0;
 
 	// iterate values in array, check if even or odd number and raise according counters
-	for (int i=0; i<N; i++)
+	for (int i = 0; i < N; i++)
 	{
 		if (creature_powers[i] % 2 == 0) // use mod 2 to check if we have an even or odd number
 		{
@@ -61,7 +61,7 @@ int *sort(int *elements, int length)
 	int zombie_array_index = 0;
 	int vampire_array_index = 0;
 	// fill zombie and vampire subarrays
-	for (int i=0; i<length; i++)
+	for (int i = 0; i < length; i++)
 	{
 		if (elements[i] % 2 == 0)
 		{
@@ -76,10 +76,10 @@ int *sort(int *elements, int length)
 	}
 	// selection sort - zombie array
 	int *min;
-	for (int i=0; i<counts.zombie_count-1; i++) // don't need to check the last element because we already set every smaller value to the left
+	for (int i = 0; i<counts.zombie_count-1; i++) // don't need to check the last element because we already set every smaller value to the left
 	{
 		min = &zombies[i]; // pivot element on the left side where we want to set the lowest item
-		for (int j=i + 1; j<counts.zombie_count; j++) // +1 because we don't need to check if the pivot element is smaller than itself for obvious reasons
+		for (int j = i + 1; j < counts.zombie_count; j++) // +1 because we don't need to check if the pivot element is smaller than itself for obvious reasons
 		{
 			if (zombies[j] < *min)
 			{
@@ -89,7 +89,7 @@ int *sort(int *elements, int length)
 		swap(&zombies[i], min);
 	}
 	// selection sort - vampire array
-	for (int i=0; i<counts.vampire_count-1; i++) // don't need to check the last element because we already set every smaller value to the left
+	for (int i = 0; i < counts.vampire_count-1; i++) // don't need to check the last element because we already set every smaller value to the left
 	{
 		min = &vampires[i]; // pivot element on the left side where we want to set the lowest item
 		for (int j=i + 1; j<counts.vampire_count; j++) // +1 because we don't need to check if the pivot element is smaller than itself for obvious reasons
@@ -102,11 +102,11 @@ int *sort(int *elements, int length)
 		swap(&vampires[i], min);
 	}
 	// merge subarrays back into elements
-	for (int i=0; i<counts.zombie_count; i++)
+	for (int i = 0; i < counts.zombie_count; i++)
 	{
 		elements[i] = zombies[i];
 	}
-	for (int i=0; i<counts.vampire_count; i++)
+	for (int i = 0; i < counts.vampire_count; i++)
 	{
 		elements[i+counts.zombie_count] = vampires[i]; // use counts.zombie_count as offset
 	}
@@ -123,14 +123,14 @@ int *create_attack_plan(int N, int *elements, creature_counts counts)
 
 	int *attack_plan = new int[N+2];  // don't forget to free the allocated memory for the attack_plan if it isn't needed anymore, otherwise we're leaking precious memory!
 	// put zombie powers into the attack plan
-	for (int i=0; i < counts.zombie_count; i++)
+	for (int i = 0; i < counts.zombie_count; i++)
 	{
 		attack_plan[i] = elements[i];
 	}
 	// put the sum of the zombie powers after the single zombie powers
 	attack_plan[counts.zombie_count] = counts.zombie_sum;
 	// now that we're done with the zombies, let's fill the attack_plan with the vampire powers...
-	for (int i=counts.zombie_count; i<N+1; i++)
+	for (int i = counts.zombie_count; i < N+1; i++)
 	{
 		attack_plan[i+1] = elements[i];
 	}
