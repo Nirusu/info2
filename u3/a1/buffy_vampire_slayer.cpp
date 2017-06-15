@@ -129,12 +129,12 @@ int *create_attack_plan(int N, int *elements, creature_counts counts)
 	}
 	// put the sum of the zombie powers after the single zombie powers
 	attack_plan[counts.zombie_count] = counts.zombie_sum;
-	// now that we're done with the zombies, let's fill the attack_plan with the vampire powers...
+	// now that we're done with the zombies, let's fill the attack_plan with the vampire powers. Use zombie_count as offset.
 	for (int i = counts.zombie_count; i < N+1; i++)
 	{
 		attack_plan[i+1] = elements[i];
 	}
-	// ... and put the sum of the vampire powers at the end of our attack plan
+	// Put the sum of the vampire powers at the end of our attack plan
 	attack_plan[N+1] = counts.vampire_sum;
 
 	// DEBUG:
