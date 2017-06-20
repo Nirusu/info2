@@ -1,0 +1,14 @@
+Autotest 1: Creation of Queue
+	5/3
+Autotest 2: Adding an element
+	5/3
+Autotest 3: Adding two elements
+	5/3
+Autotest 4: has_next - empty
+	3/1
+Autotest 5: has_next - non-empty
+	3/1
+Autotest 6: has_next - after-pop
+	3/1
+================================================================================
+Gesamt: 24/12

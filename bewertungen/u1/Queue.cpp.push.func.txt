@@ -1,0 +1,21 @@
+Matrikelnummer: 108016204350_108016214085_108016217213
+Uebung: a3
+Aufgabenteil: Queue.cpp.push.func
+--------------------------------------------------------------------------------
+Richtiger Algorithmus? (Kein Hardcoding, kein anderer Algorithmus)
+	2/2
+
+--------------------------------------------------------------------------------
+Ist der Code sinnvoll dokumentiert?
+	0/2
+
+--------------------------------------------------------------------------------
+Wurden sinnvolle Bezeichner verwendet?
+	2/2
+
+--------------------------------------------------------------------------------
+Ist der Code gut lesbar? (Einrueckung, Non-obfuscated, Magic constants...)
+	2/2
+
+--------------------------------------------------------------------------------
+Gesamt: 6/8

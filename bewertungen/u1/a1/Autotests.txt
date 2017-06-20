@@ -1,0 +1,8 @@
+Autotest 1: Creating a Simple_class
+	3/3
+Autotest 2: Getter of Simple_class
+	4/4
+Autotest 3: Setter of Simple_class
+	3/3
+================================================================================
+Gesamt: 10/10

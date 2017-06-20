@@ -1,0 +1,16 @@
+/Linked_list.cpp.remove_at_index.func.txt
+	4/4
+/theorie.txt.txt
+	4/5
+/Queue.cpp.push.func.txt
+	6/8
+/Linked_list.cpp.insert_at_index.func.txt
+	4/4
+a3/Autotests.txt
+	24/12
+a2/Autotests.txt
+	33/38
+a1/Autotests.txt
+	10/10
+--------------------------------------------------------------------------------
+Gesamt: 85/100
