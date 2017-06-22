@@ -1,11 +1,11 @@
-Autotest 1: Getting attribute of Linked_list
-	3/3
-Autotest 2: Getting next-ptr of Linked_list
-	3/3
-Autotest 3: Creation of Linked_list
+Autotest 1: Creation of Linked_list
 	4/4
-Autotest 4: Setting attribute of Linked_list
-	3/4
+Autotest 2: Getting attribute of Linked_list
+	3/3
+Autotest 3: Setting attribute of Linked_list
+	3/3
+Autotest 4: Getting next-ptr of Linked_list
+	3/3
 Autotest 5: Prepend
 	2/2
 Autotest 6: Cannot insert list
@@ -31,4 +31,4 @@ Autotest 15: Cannot remove after end -- off by one
 Autotest 16: Cannot remove after end
 	2/2
 ================================================================================
-Gesamt: 33/38
+Gesamt: 33/37
