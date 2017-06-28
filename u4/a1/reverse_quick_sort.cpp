@@ -14,7 +14,9 @@ void reverse_quick_sort(std::vector<Orange> *oranges, int left, int right)
          * and searching for an element from the right side which is less than the pivot value,
          * we search the left side for an element which is smaller than the pivot value
          * and search the right side for an element which is bigger than the pivot element.
-         * If both our searches end, we swap the found oranges and recursively call this function again with adjusted boundaries.
+         * If both our searches end, we swap the found oranges so that in the end, we'll have oranges "greater" than the pivot
+         * on the left side of the pivot and oranges "worse" than the pivot on the right side of the pivot. 
+         * If we're done with one iteration, recursively call this function again with adjusted boundaries.
          */
         while ((*oranges)[pivot] < (*oranges)[i]) // bracketed pointers needed because we want to access the Orange objects from inside the vector
             i++;
