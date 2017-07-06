@@ -2,10 +2,7 @@
 
 Hash_table::Hash_table()
 {
-    for (int i = 0; i < 256; i++)
-    {
-        ratings.push_back(-1); // use push_back instead of insert because it's more efficient for array filling
-    }
+	ratings.resize(256, -1); // expand array to 256 entries (0-255), use -1 as dummy entries
 }
 
 void Hash_table::put(std::string title, int value)
