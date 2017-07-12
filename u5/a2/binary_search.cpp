@@ -8,13 +8,14 @@ int binary_search_upper(std::vector<Spaceship> ships, Spaceship ship)
 
     /* modified binary search:
      *
-     * instead of directly searing for the highest item,
-     * we search for the start of the a ship class in the vector
+     * instead of directly searching for the highest item,
+     * we search for the start of the requested ship class in the vector.
+     * The requested ship class is the one provided by ship.
      */
     while (left < right) // abort search if we're done with searching
     {
         mid = (left + right) / 2;
-        // if we're in the same class, use this as our middle for searching
+        // if we're in the same ship class, use the middle element as right boundary
         if (ships[mid] == ship)
             right = mid;
         else
