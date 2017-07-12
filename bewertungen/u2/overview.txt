@@ -1,0 +1,32 @@
+a1/a.txt.txt
+	2/2
+a1/b.txt.txt
+	1/2
+a1/c.txt.txt
+	2/2
+a1/d.txt.txt
+	2/2
+a1/e.txt.txt
+	0/2
+a1/f.txt.txt
+	0/2
+a1/g.txt.txt
+	2/2
+a2/a.txt.txt
+	12/12
+a2/b.txt.txt
+	12/12
+a2/c.txt.txt
+	12/12
+a3/Autotests.txt
+	11/12
+a3/count_13th.cpp.txt
+	8/8
+a4/Autotests.txt
+	22/22
+a4/levenshtein.cpp.levenshtein_distance.func.txt
+	3/4
+a4/levenshtein.cpp.minimal.func.txt
+	3/4
+--------------------------------------------------------------------------------
+Gesamt: 92/100

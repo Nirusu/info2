@@ -1,0 +1,46 @@
+Autotest 1: Signature for Edit-distance function
+	1/1
+Autotest 2: minimal -- No change
+	1/1
+Autotest 3: minimal -- Replace
+	1/1
+Autotest 4: minimal -- Insert
+	1/1
+Autotest 5: minimal -- Delete
+	1/1
+Autotest 6: Levenshtein -- original vs katze
+	1/1
+Autotest 7: Levenshtein -- original vs origin
+	1/1
+Autotest 8: Levenshtein -- original vs originality
+	1/1
+Autotest 9: Levenshtein -- original vs marginal
+	1/1
+Autotest 10: Levenshtein -- original vs primal
+	1/1
+Autotest 11: Levenshtein -- original vs figuratively
+	1/1
+Autotest 12: Levenshtein -- original vs fake
+	1/1
+Autotest 13: Levenshtein -- original vs fake!
+	1/1
+Autotest 14: Levenshtein -- original vs org
+	1/1
+Autotest 15: Levenshtein -- origin vs original
+	1/1
+Autotest 16: Levenshtein -- originality vs origin
+	1/1
+Autotest 17: Levenshtein -- marginal vs original
+	1/1
+Autotest 18: Levenshtein -- primal vs original
+	1/1
+Autotest 19: Levenshtein -- figuratively vs original
+	1/1
+Autotest 20: Levenshtein -- fake vs original
+	1/1
+Autotest 21: Levenshtein -- fake! vs original
+	1/1
+Autotest 22: Levenshtein -- org vs original
+	1/1
+================================================================================
+Gesamt: 22/22

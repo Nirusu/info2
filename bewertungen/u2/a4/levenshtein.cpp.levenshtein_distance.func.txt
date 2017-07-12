@@ -1,0 +1,21 @@
+Matrikelnummer: 108016204350_108016214085_108016217213
+Uebung: a4
+Aufgabenteil: levenshtein.cpp.levenshtein_distance.func
+--------------------------------------------------------------------------------
+Richtiger Algorithmus? (Kein Hardcoding, kein anderer Algorithmus)
+	1/1
+
+--------------------------------------------------------------------------------
+Ist der Code sinnvoll dokumentiert?
+	1/1
+
+--------------------------------------------------------------------------------
+Wurden sinnvolle Bezeichner verwendet?
+	0/1
+
+--------------------------------------------------------------------------------
+Ist der Code gut lesbar? (Einrueckung, Non-obfuscated, Magic constants...)
+	1/1
+
+--------------------------------------------------------------------------------
+Gesamt: 3/4

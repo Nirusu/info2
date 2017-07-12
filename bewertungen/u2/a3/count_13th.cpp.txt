@@ -1,0 +1,21 @@
+Matrikelnummer: 108016204350_108016214085_108016217213
+Uebung: a3
+Aufgabenteil: count_13th.cpp
+--------------------------------------------------------------------------------
+Richtiger Algorithmus? (Kein Hardcoding, kein anderer Algorithmus)
+	2/2
+
+--------------------------------------------------------------------------------
+Ist der Code sinnvoll dokumentiert?
+	2/2
+
+--------------------------------------------------------------------------------
+Wurden sinnvolle Bezeichner verwendet?
+	2/2
+
+--------------------------------------------------------------------------------
+Ist der Code gut lesbar? (Einrueckung, Non-obfuscated, Magic constants...)
+	2/2
+
+--------------------------------------------------------------------------------
+Gesamt: 8/8
