@@ -11,11 +11,10 @@ int Linear_probing_hash_table::get_index(unsigned char hash, std::string key)
 	int index = hash;
 	while (table[index] != nullptr)
 	{
-		if (table[index]->key == key)
-			return index;
-		index = (index + 1) % 256;
-		// TODO: Was returnen, wenn wir nichts finden?
-		if (index == hash) // abort if our search is exhausted
+		if (table[index]->key == key) // if the key of the entry matches we key we're searching for, we found the index...
+			return index; // ... so let's return it.
+		index = (index + 1) % 256; // if we haven't found our key, do linear probing with wrap-around
+		if (index == hash) // abort if our search is exhausted, return -1
 		{
 			return -1;
 		}
@@ -44,6 +43,7 @@ void Linear_probing_hash_table::insert(Entry *e)
 void Linear_probing_hash_table::remove(unsigned char hash, std::string key)
 {
 	int index = hash;
+	// Step 1: find element
 	while (table[index]->key != key) // don't iterate over 256
 	{
 		index++; // we're ignoring the wrap-around here
@@ -52,13 +52,24 @@ void Linear_probing_hash_table::remove(unsigned char hash, std::string key)
 			return;
 		}
 	}
+	// Step 2a): deletion with next cell empty
 	if (table[index+1] == nullptr)
 	{
 		table[index] = nullptr;
 	}
+	// Step 2b): deletion with next cell NOT empty
 	else
 	{
-		// TODO: Third case
+		// find next element which is at an irregular spot
+		for (int i=index; i < 256; i++) // abort if we reach the end of the table, no wrap-around
+		{
+			if (i != table[i]->hash) // check if the hash doesn't match the index, because that means the entry has been moved by linear probing
+			{
+				table[index] = table[i];
+				table[i] = nullptr;
+				break;
+			}
+		}
 	}
 }
 
