@@ -9,12 +9,14 @@ Linear_probing_hash_table::Linear_probing_hash_table()
 int Linear_probing_hash_table::get_index(unsigned char hash, std::string key)
 {
 	int index = hash;
+	// abort if we hit a nullptr
+	// all other cases are handled inside the loop
 	while (table[index] != nullptr)
 	{
 		if (table[index]->key == key) // if the key of the entry matches we key we're searching for, we found the index...
 			return index; // ... so let's return it.
 		index = (index + 1) % 256; // if we haven't found our key, do linear probing with wrap-around
-		if (index == hash) // abort if our search is exhausted, return -1
+		if (index == hash) // abort if our search is exhausted
 		{
 			return -1;
 		}
@@ -25,8 +27,8 @@ int Linear_probing_hash_table::get_index(unsigned char hash, std::string key)
 
 void Linear_probing_hash_table::insert(Entry *e)
 {
-	// insertion of a new entry to the table
 	int index = e->hash;
+	// if the correct entry is free, this loop isn't executed. If the correct entry is blocked, this loop does the linear-probing stuff.
 	while (table[index] != nullptr)
 	{
 		if (e->key == table[index]->key) // if we find the same key, overwrite the entry
@@ -34,8 +36,9 @@ void Linear_probing_hash_table::insert(Entry *e)
 			table[index] = e;
 			return;
 		}
-		index = (index + 1) % 256;
+		index = (index + 1) % 256; // linear probing
 	}
+	// if we found an empty spot, insert the entry.
 	table[index] = e;
 }     
 
@@ -57,19 +60,22 @@ void Linear_probing_hash_table::remove(unsigned char hash, std::string key)
 	{
 		table[index] = nullptr;
 	}
-	// Step 2b): deletion with next cell NOT empty
-	else
-	{
+	// Step 2a) + 2b): deletion with next cell empty (first if) or NOT empty (second if)
 		// find next element which is at an irregular spot
-		for (int i=index; i < 256; i++) // abort if we reach the end of the table, no wrap-around
+		for (int i=index+1; i < 256; i++) // abort if we reach the end of the table, no wrap-around
 		{
-			if (i != table[i]->hash) // check if the hash doesn't match the index, because that means the entry has been moved by linear probing
-			{
-				table[index] = table[i];
-				table[i] = nullptr;
+			// if we hit an empty entry, delete our entry and don't do anything else
+			if (table[i] == nullptr) {
+				table[index] = nullptr;
 				break;
 			}
+			// else find the next entry where the hash doesn't match the index, because that means the entry has been moved by linear probing
+			if (i != table[i]->hash)
+			{
+				table[index] = table[i]; // move next-found linear probed element to our empty spot
+				table[i] = nullptr; // clear the spot
+				break; // stop the search
+			}
 		}
-	}
 }
 
