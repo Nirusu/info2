@@ -70,7 +70,7 @@ void Linear_probing_hash_table::remove(unsigned char hash, std::string key)
             break; // stop the search
         }
         // else find the next entry where the hash doesn't match the index, because that means the entry has been moved by linear probing
-        if (i != table[i]->hash)
+        if (table[i]->hash <= i)
         {
             table[index] = table[i]; // move next-found linear probed element to our empty spot
             table[i] = nullptr; // clear the spot
