@@ -56,6 +56,7 @@ void Linear_probing_hash_table::remove(unsigned char hash, std::string key)
 		}
 	}
     // if we found the element, delete it
+    delete table[index];
     table[index] = nullptr;
     // Step 2a) + 2b): search for next empty cell (& abort) or an entry to move forward
 	// find next element which is at an irregular spot
