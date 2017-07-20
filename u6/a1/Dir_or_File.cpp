@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "Dir_or_File.hpp"
 
 Dir_or_File::Dir_or_File(std::string name)
@@ -41,7 +42,13 @@ std::vector<std::string> Dir_or_File::split_after_slash(std::string full_path)
 void Dir_or_File::insert(std::vector<std::string> names)
 {
 	// now comes the insertion of new entries
-	// again make sure to distinguihs between files and directories
-
+	// again make sure to distinguish between files and directories
+	for (int i=0; i < names.size(); i++)
+	{
+		if (std::binary_search(this->entries.begin(), this->entries.end(), names[i])) // if the dir or file already exists
+		{
+			continue;
+		}
+	}
 }
 
