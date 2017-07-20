@@ -40,7 +40,7 @@ void Linear_probing_hash_table::insert(Entry *e)
 	}
 	// if we found an empty spot, insert the entry.
 	table[index] = e;
-}     
+}
 
 
 void Linear_probing_hash_table::remove(unsigned char hash, std::string key)
@@ -60,22 +60,22 @@ void Linear_probing_hash_table::remove(unsigned char hash, std::string key)
 	{
 		table[index] = nullptr;
 	}
-	// Step 2a) + 2b): deletion with next cell empty (first if) or NOT empty (second if)
+	    // Step 2a) + 2b): deletion with next cell empty (first if) or NOT empty (second if)
 		// find next element which is at an irregular spot
-		for (int i=index+1; i < 256; i++) // abort if we reach the end of the table, no wrap-around
-		{
-			// if we hit an empty entry...
-			if (table[i] == nullptr) {
-				table[index] = nullptr; // delete our entry we meant to delete
-				break; // stop the search
-			}
-			// else find the next entry where the hash doesn't match the index, because that means the entry has been moved by linear probing
-			if (i != table[i]->hash)
-			{
-				table[index] = table[i]; // move next-found linear probed element to our empty spot
-				table[i] = nullptr; // clear the spot
-				break; // stop the search
-			}
-		}
+    for (int i=index+1; i < 256; i++) // abort if we reach the end of the table, no wrap-around
+    {
+        // if we hit an empty entry...
+        if (table[i] == nullptr) {
+            table[index] = nullptr; // delete our entry we meant to delete
+            break; // stop the search
+        }
+        // else find the next entry where the hash doesn't match the index, because that means the entry has been moved by linear probing
+        if (i != table[i]->hash)
+        {
+            table[index] = table[i]; // move next-found linear probed element to our empty spot
+            table[i] = nullptr; // clear the spot
+            break; // stop the search
+        }
+    }
 }
 
