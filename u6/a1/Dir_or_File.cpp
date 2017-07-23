@@ -1,4 +1,3 @@
-#include <algorithm>
 #include "Dir_or_File.hpp"
 
 Dir_or_File::Dir_or_File(std::string name)
@@ -12,22 +11,32 @@ std::vector<std::string> Dir_or_File::split_after_slash(std::string full_path)
 {
 	std::vector<std::string> ret;
 
-	int position_after_last_slash = 0;
- 	for(int i=0; i < full_path.length(); i++)
+	/* because dealing with the substring function seems to be a hassle (see past commits), do a "dumb approach":
+	 * add every char (including /) of we string to a second, temporary one until we hit a slash
+	 * if we hit one, push it back in the vector and clear the temporary string
+	 * repeat this until we reach the end of the string.
+	 */
+
+	std::string current_path;
+	for (char i : full_path)
 	{
-		if (full_path[i] == '/')
+		current_path += i;
+		if (i == '/')
 		{
-			if (i == 0) // workaround for root path, because substr(0,0) doesn't work
-			{
-				ret.emplace_back("/");
-			}
-			else
-			{
-				std::string substring = full_path.substr(position_after_last_slash, i);
-				ret.push_back(substring);
-			}
-			position_after_last_slash = i + 1;
+			ret.emplace_back(current_path);
+			current_path = "";
 		}
+	}
+
+	/* if the end of the path is a file, there's no slash at the end,
+	 * so we insert the rest of the temporary string
+	 * (if it's not empty, which would be the case if the path ends with a dir)
+	 * in the vector and call it a day
+	 */
+
+	if (!current_path.empty())
+	{
+		ret.emplace_back(current_path);
 	}
 	return ret;
 }
@@ -39,8 +48,10 @@ void Dir_or_File::insert(std::vector<std::string> names)
 		return;
 
 	// pick the current directory or file to work with, than move the rest of the path up for our next iterator
+
 	std::string current_name = names[0]; // save the dir or file we want to work with as current_name
 	names.erase(names.begin()); // remove the just-before saved entry from "names" so we can use "names" for the recursive calls
+
 	// go through "entries" to search for equal (case 1) or bigger entries (case 2)
 	for (int i=0; i<entries.size(); i++)
 	{
