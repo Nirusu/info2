@@ -12,8 +12,8 @@ std::vector<std::string> Dir_or_File::split_after_slash(std::string full_path)
 	std::vector<std::string> ret;
 
 	/* because dealing with the substring function seems to be a hassle (see past commits), do a "dumb approach":
-	 * add every char (including /) of we string to a second, temporary one until we hit a slash
-	 * if we hit one, push it back in the vector and clear the temporary string
+	 * add every char (including /) of the string to a second, temporary one until we hit a slash
+	 * if we hit one, push it back (or emplace_back because of fancy new C++11 stuff) in the vector and clear the temporary string
 	 * repeat this until we reach the end of the string.
 	 */
 
